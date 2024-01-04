@@ -48,7 +48,7 @@ set -e
 echo "Unpacking the chocophlan database"
 mkdir -p chocophlan_db
 tar xzf "${chocoplan_db}" --directory chocophlan_db
-ls -lahtr chocophlan_db/
+echo "Unpacked \$(ls -lahtr chocophlan_db/* | wc -l) genomes"
 
 echo "Setting up the reference database locations"
 humann_config --update database_folders nucleotide "\$PWD/chocoplan_db"
