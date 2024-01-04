@@ -1,0 +1,3 @@
+[submodule "modules/submodules/metaphlan-nf"]
+	path = modules/submodules/metaphlan-nf
+	url = https://github.com/FredHutch/metaphlan-nf
