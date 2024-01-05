@@ -6,7 +6,7 @@ process renorm_table {
     tuple val(sample), path(input_tsv)
 
     output:
-    path "${sample}${params.relab_suffix}"
+    path "${sample}${params.output_suffix}"
 
     """#!/bin/bash
 set -e
@@ -14,7 +14,7 @@ set -e
 echo Computing normalized abundances
 humann_renorm_table \
     --input "${input_tsv}" \
-    --output "${sample}${params.relab_suffix}" \
+    --output "${sample}${params.output_suffix}" \
     --units relab
 
 echo Done
