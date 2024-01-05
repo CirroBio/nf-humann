@@ -1,29 +1,27 @@
 include {
     renorm_table as renorm_genefamilies
 } from "./renorm_table" addParams(
-    output_suffix: "_2_genefamilies_relab.tsv"
+    output_suffix: "_genefamilies_relabund.tsv"
 )
 
 include {
     renorm_table as renorm_pathabundance
 } from "./renorm_table" addParams(
-    output_suffix: "_4_pathabundance_relab.tsv"
+    output_suffix: "_pathabundance_relabund.tsv"
 )
 
 include {
     join_tables as join_genefamilies
 } from "./join_tables" addParams(
     output_filename: "humann_genefamilies.tsv",
-    join_name: "genefamilies_relab",
-    remove_suffix: "_2_genefamilies_relab.tsv"
+    remove_suffix: "_genefamilies_relabund.tsv"
 )
 
 include {
     join_tables as join_pathabundance
 } from "./join_tables" addParams(
     output_filename: "humann_pathabundance.tsv",
-    join_name: "pathabundance_relab",
-    remove_suffix: "_4_pathabundance_relab.tsv"
+    remove_suffix: "_pathabundance_relabund.tsv"
 )
 
 process humann_call {

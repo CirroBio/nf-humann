@@ -28,8 +28,7 @@ ls -lah inputs
 echo Joining tables
 humann_join_tables \
     --input inputs \
-    --output "${params.output_filename}" \
-    --file_name "${params.join_name}"
+    --output "${params.output_filename}"
 
 echo Done
 ls -lahtr
