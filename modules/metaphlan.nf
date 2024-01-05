@@ -7,7 +7,10 @@ include {
     concat_bwt;
     concat_sam;
     merge
-} from './submodules/metaphlan-nf/modules/process' addParams(db: "${params.metaphlan_db}")
+} from './submodules/metaphlan-nf/modules/process' addParams(
+    db: "${params.metaphlan_db}",
+    output: "${params.output}/metaphlan"
+)
 
 workflow metaphlan {
     take:
