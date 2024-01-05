@@ -13,7 +13,7 @@ set -e
 
 echo Joining tables
 humann_join_tables \
-    --input input \
+    --input inputs \
     --output "${params.output_filename}" \
     --file_name "${params.join_name}"
 
