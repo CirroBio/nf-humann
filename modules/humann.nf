@@ -87,10 +87,6 @@ humann \
 
 echo Done
 
-echo Removing local chocophlan database
-rm -r chocoplan_db
-echo Done
-
 ls -lahtr
 ls -lahtr "${sample}/"
     """
