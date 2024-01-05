@@ -14,14 +14,16 @@ include {
     join_tables as join_genefamilies
 } from "./join_tables" addParams(
     output_filename: "humann_genefamilies.tsv",
-    join_name: "genefamilies_relab"
+    join_name: "genefamilies_relab",
+    remove_suffix: "_2_genefamilies_relab.tsv"
 )
 
 include {
     join_tables as join_pathabundance
 } from "./join_tables" addParams(
     output_filename: "humann_pathabundance.tsv",
-    join_name: "pathabundance_relab"
+    join_name: "pathabundance_relab",
+    remove_suffix: "_4_pathabundance_relab.tsv"
 )
 
 process humann_call {
