@@ -58,10 +58,10 @@ humann_config --update database_folders nucleotide "\$PWD/chocoplan_db"
 ls -lh inputs/*
 if (( \$(ls inputs/* | wc -l) > 1 )); then
     echo "More than one input file detected - merging"
-    cat inputs/* > INPUT.${params.input_format}
+    cat inputs/* > "${sample}.${params.input_format}"
 else
     echo "A single input file has been detected"
-    ln -s inputs/* INPUT.${params.input_format}
+    ln -s inputs/* "${sample}.${params.input_format}"
 fi
 
 echo "Running humann --version"
@@ -69,7 +69,7 @@ humann --version
 
 echo "Running humann"
 humann \
-    --input "INPUT.${params.input_format}" \
+    --input "${sample}.${params.input_format}" \
     --output "${sample}" \
     --threads ${task.cpus} \
     --taxonomic-profile "${taxonomic_profile}" \
